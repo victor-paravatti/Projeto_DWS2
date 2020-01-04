@@ -35,9 +35,10 @@ function SpotList({ tech, navigation }) {
                 keyExtractor={spot => spot._id}
                 horizontal
                 showsHorizontalScrollIndicator={false}
-                renderItem={({item}) => (
+                renderItem={({ item }) => (
                     <View style={styles.listItem}>
                         <Image style={styles.thumbnail} source={{ uri: item.thumbnail_url }}/>
+                        
                         <Text style={styles.company}>{item.company}</Text>
                         <Text style={styles.price}>{item.price ? `R$${item.price}/dia` : 'GRATUITO'}</Text>
                         <TouchableOpacity onPress={() => handleNavigate(item._id) } style={styles.button}>
@@ -80,7 +81,9 @@ const styles = StyleSheet.create({
         width: 280,
         height: 168,
         resizeMode: 'cover',
-        borderRadius: 2
+        borderRadius: 2,
+        borderWidth: 1,
+        borderColor: '#ddd',
     },
 
     company: {
