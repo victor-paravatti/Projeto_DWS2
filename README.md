@@ -1,21 +1,53 @@
-<h1 align="center">Welcome to Aircnc 👋</h1>
-<p>
-  <a href="#" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-  </a>
+
+<h1 align="center">
+    <img alt="Aircnc" title="#DevRadar" src=".github/aircnc.png" width="250px" />
+</h1>
+
+<h4 align="center">
+  🚀 Week OmniStack 9.0 by RocketSeat
+</h4>
+
+<p align="center">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Rocketseat/semana-omnistack-10">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
 
-> This project was developed during week omnistack 9. The purpose of this application is that it is possible for developers to select places where they can use as space to develop and it is also possible for companies to make this space available.
+<p align="center">
+  <a href="#🤔 Getting Started">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-layout">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#memo-licença">License</a>
+</p>
 
-## Author
+<p align="center">
+  <img alt="Frontend" src=".github/aircnc-screens.jpeg" width="100%">
+</p>
 
-👤 **Gustavo Souza**
+## 🚀 Technologies
 
-* Github: [@guuhx97](https://github.com/guuhx97)
+For the development of the project, the following techniques were used:
 
-## Show your support
+- [Node.js](https://nodejs.org/en/)
+- [React](https://reactjs.org)
+- [React Native](https://facebook.github.io/react-native/)
+- [Expo](https://expo.io/)
+- [Mongo](https://www.mongodb.com/)
 
-Give a ⭐️ if this project helped you!
+## 💻 Project
+Aircnc is an application that aims to connect companies that are willing to provide spots and developers who are looking for a place to work and be able to improve their knowledge. It was developed during the omnistack 10.0 week, offered by Rocketseat.
 
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+## 🤔 Getting Started
+
+- Clone this repository
+- Change the database address (mongodb) on the application's backend in the `server.js` file;
+- Change the IP address of the API on the application's mobile in the `/src/services/api.js` file.
+- Install the project facilities with `yarn install`
+- Run the application backend with the command `yarn dev`
+- Run the application frontend with the command `yarn start`
+- Run the mobile application with the command `yarn start`
+
+
+## 📝 License
+
+This project is under the MIT license. See the [LICENSE](LICENSE) for more details.
+
