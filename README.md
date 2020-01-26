@@ -20,7 +20,7 @@
 </p>
 
 <p align="center">
-  <img alt="Frontend" src=".github/aircnc-screens.jpeg" width="100%">
+  <img alt="Frontend" src=".github/aircnc-screens.png" width="100%">
 </p>
 
 ## 🚀 Technologies
