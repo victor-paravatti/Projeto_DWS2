@@ -1,53 +1,61 @@
-
 <h1 align="center">
-    <img alt="Aircnc" title="#DevRadar" src=".github/aircnc.png" width="250px" />
+    <img alt="Aircnc" src=".github/logo.png" />
 </h1>
 
 <h4 align="center">
-  🚀 Week OmniStack 9.0 by RocketSeat
+  🚀 Semana OmniStack 9.0 by RocketSeat
 </h4>
 
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/Rocketseat/semana-omnistack-10">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/guuhx97/aircnc">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
-
 <p align="center">
-  <a href="#🤔 Getting Started">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">License</a>
+  <img alt="Aircnc" src=".github/aircnc-screens.png" width="100%">
 </p>
 
-<p align="center">
-  <img alt="Frontend" src=".github/aircnc-screens.png" width="100%">
-</p>
+## 👨🏼‍💻 Projeto
 
-## 🚀 Technologies
+O Aircnc é uma aplicação que visa facilitar o encontro entre programadores e empresas. Nele é possível empresas cadastrar locais, onde os programadores possam usar como local de trabalho e onde os programadores podem encontrar esses locais. Foi desenvolvida durante a <b>Semana Omnistack 9.0</b>.  
 
-For the development of the project, the following techniques were used:
+## 🔨 Tecnologias
 
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Aprender/JavaScript)
 - [Node.js](https://nodejs.org/en/)
-- [React](https://reactjs.org)
-- [React Native](https://facebook.github.io/react-native/)
+- [React](https://pt-br.reactjs.org/)
+- [React Native](https://reactnative.dev/)
 - [Expo](https://expo.io/)
-- [Mongo](https://www.mongodb.com/)
+- [MongoDB](https://www.mongodb.org)
 
-## 💻 Project
-Aircnc is an application that aims to connect companies that are willing to provide spots and developers who are looking for a place to work and be able to improve their knowledge. It was developed during the omnistack 10.0 week, offered by Rocketseat.
+## 🔄 Executar
+ - Fazer clone do repositório.
 
-## 🤔 Getting Started
+### 🔧 Back-end
+ - Entrar na pasta `backend`;
+ - Executar `yarn install` para instalar dependências do projeto;
+ - Executar `yarn dev` para que o projeto seja executado;
 
-- Clone this repository
-- Change the database address (mongodb) on the application's backend in the `server.js` file;
-- Change the IP address of the API on the application's mobile in the `/src/services/api.js` file.
-- Install the project facilities with `yarn install`
-- Run the application backend with the command `yarn dev`
-- Run the application frontend with the command `yarn start`
-- Run the mobile application with the command `yarn start`
+### 💻 Front-end
+ - Entrar na pasta `frontend`;
+ - Executar `yarn install` para instalar dependências do projeto;
+ - Executar `yarn start` para que o projeto seja executado;
 
+### 📱 Mobile
+- Entrar na pasta `mobile`;
+ - Executar `yarn install` para instalar dependências do projeto;
+ - Executar `yarn start` para que o projeto seja executado;
 
-## 📝 License
+## ♻️ Como contribuir
+- Faça um fork desse repositório;
+- Crie uma branch com a sua feature: `git checkout -b minha-feature`
+- Commit suas mudanças: `git commit -m ':emoji: feat: My new feature'`
+- Push a sua branch: `git push origin my-feature`
 
-This project is under the MIT license. See the [LICENSE](LICENSE) for more details.
+## 📝 Licença
+Este projeto está sobre a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
+---
+
+<h4 align="center">
+  Feito com ❤️ by Gustavo Souza
+</h4>
