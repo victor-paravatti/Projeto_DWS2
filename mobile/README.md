@@ -12,26 +12,25 @@
 </p>
 
 ## 📱 Interfaces
-O aplicativo mobile do tindev conta com três interfaces, onde é possível o usuário fazer login, fazer reserva em um `spot` e por fim confirmar a data na qual ele vai utilizar esse `spot`. 
 
+O aplicativo mobile do tindev conta com três interfaces, onde é possível o usuário fazer login, fazer reserva em um `spot` e por fim confirmar a data na qual ele vai utilizar esse `spot`.
 
 <div align="center">
-    <img alt="Aircnc" border="1px solid #000" src="../.github/mobile-login.png"  border="1px solid #000" width="200px" height="355.5px"/>
-    <img alt="Aircnc" border="1px solid #000" src="../.github/mobile-home.png" width="200px" />
-    <img alt="Aircnc" border="1px solid #000" src="../.github/mobile-confirm.png" width="200px" />
-    <img alt="Aircnc" border="1px solid #000"  src="../.github/mobile-aircnc.gif" width="200px" height="355.5px" />
+    <img alt="AirCnC" src="../.github/mobile-interface.png"  height="355.5px"/>
 </div>
 
 ## 🔄 Executar
-- Entrar na pasta `mobile`;
- - Executar `yarn install` para instalar dependências do projeto;
- - Executar `yarn start` para que o projeto seja executado;
 
- ## 📝 Licença
+- Entrar na pasta `mobile`;
+- Executar `yarn install` para instalar dependências do projeto;
+- Executar `yarn start` para que o projeto seja executado;
+
+## 📝 Licença
+
 Este projeto está sobre a licença MIT. Veja o arquivo [LICENSE](../LICENSE.md) para mais detalhes.
 
-
 ---
+
 <h4 align="center">
   Feito com ❤️ by Gustavo Souza
 </h4>
