@@ -1,16 +1,16 @@
 import React from 'react';
 
-import logo from './assets/logo.svg';
+import NavBar from '../src/pages/layout/NavBar'
 import Routes from './routes';
 
-import './App.css';
+
+
+
 
 function App() {
   return (
-    <div className="container">
-      <img src={logo} alt="AirCnC"/>   
-      
-      <div className="content">
+    <div >    
+      <div>
         <Routes />
       </div>   
     </div>

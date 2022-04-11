@@ -1,0 +1,19 @@
+{
+  "name": "aircnc",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">     <img alt=\"Aircnc\" src=\".github/logo.png\" /> </h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gusttavosouza/aircnc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gusttavosouza/aircnc/issues"
+  },
+  "homepage": "https://github.com/gusttavosouza/aircnc#readme"
+}

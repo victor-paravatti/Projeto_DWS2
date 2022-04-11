@@ -12,7 +12,7 @@ const server = http.Server(app);
 const io = socketio(server);
 
 mongoose.connect(
-  'mongodb+srv://omnistack:omnistack@omnistack-r76vq.mongodb.net/semana09?retryWrites=true&w=majority',
+  'conexão com o banco ',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
