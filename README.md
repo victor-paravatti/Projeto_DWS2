@@ -55,4 +55,4 @@ Este projeto está sobre a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) pa
 ---
 
 <h4 align="center">
-  Feito com ❤️ by Victor G paravatti
+  Feito com ❤️ by Victor G Paravatti & Adriano Rosa & Pedro Calasans & Lucas Bandeira & Demetrios Pantaleão
