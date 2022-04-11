@@ -1,22 +1,23 @@
 <h1 align="center">
-    <img alt="Aircnc" src=".github/logo.png" />
+   ♻️ App Double Biceps
+</h1>
+<h1 align="center">
+    <img alt="Aircnc" src=".github/1.png" />
 </h1>
 
 <h4 align="center">
-  🚀 Semana OmniStack 9.0 by RocketSeat
+  🚀 Trabalho De DWS
 </h4>
 
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/guuhx97/aircnc">
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
-<p align="center">
-  <img alt="Aircnc" src=".github/aircnc-screens.png" width="100%">
-</p>
+
 
 ## 👨🏼‍💻 Projeto
 
-O Aircnc é uma aplicação que visa facilitar o encontro entre programadores e empresas. Nele é possível empresas cadastrar locais, onde os programadores possam usar como local de trabalho e onde os programadores podem encontrar esses locais. Foi desenvolvida durante a <b>Semana Omnistack 9.0</b>.  
+O Dublebiceps é uma aplicação que visa facilitar o encontro entre vendedores de suplemento e empresas. Nele é possível empresas vender os suplementos de academia para vendedores locais, onde os vendedores possam usar como portifolio de vendas. Foi desenvolvida par Aula de DWS a.  
 
 ## 🔨 Tecnologias
 
@@ -40,10 +41,7 @@ O Aircnc é uma aplicação que visa facilitar o encontro entre programadores e 
  - Executar `yarn install` para instalar dependências do projeto;
  - Executar `yarn start` para que o projeto seja executado;
 
-### 📱 Mobile
-- Entrar na pasta `mobile`;
- - Executar `yarn install` para instalar dependências do projeto;
- - Executar `yarn start` para que o projeto seja executado;
+
 
 ## ♻️ Como contribuir
 - Faça um fork desse repositório;
@@ -57,5 +55,4 @@ Este projeto está sobre a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) pa
 ---
 
 <h4 align="center">
-  Feito com ❤️ by Gustavo Souza
-</h4>
+  Feito com ❤️ by Victor G paravatti
