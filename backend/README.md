@@ -1,9 +1,12 @@
 <h1 align="center">
-    <img alt="Aircnc" src="../.github/logo.png" />
+   ♻️ App Double Biceps
+</h1>
+<h1 align="center">
+    <img alt="Aircnc" src=".github/1.png" />
 </h1>
 
 <h4 align="center">
-  🚀 Semana OmniStack 9.0 by RocketSeat
+  🚀 Trabalho De DWS
 </h4>
 
 <p align="center">
@@ -41,5 +44,5 @@ Este projeto está sobre a licença MIT. Veja o arquivo [LICENSE](../LICENSE.md)
 
 ---
 <h4 align="center">
-  Feito com ❤️ by Gustavo Souza
+  Feito com ❤️ by Victor G Paravatti & Adriano Rosa & Pedro Calasans & Lucas Bandeira & Demetrios Pantaleão
 </h4>
