@@ -1,9 +1,7 @@
 <h1 align="center">
    ♻️ App Double Biceps
 </h1>
-<h1 align="center">
-    <img alt="Aircnc" src=".github/1.png" />
-</h1>
+
 
 <h4 align="center">
   🚀 Trabalho De DWS
