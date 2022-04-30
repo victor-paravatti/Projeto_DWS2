@@ -25,18 +25,18 @@ export const sliderItems = [
 export const categories = [
 	{
 		id: 1,
-		img: "https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-		title: "SHIRT STYLE!",
+		img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpanoramafarmaceutico.com.br%2Fwp-content%2Fuploads%2F2018%2F07%2F19.07.jpg&f=1&nofb=1",
+		title: "WHEY GOLD!",
 	},
 	{
 		id: 2,
-		img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-		title: "LOUNGEWEAR LOVE",
+		img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdraiz.com.br%2Fwp-content%2Fuploads%2F2018%2F02%2Fcatagoria-suplementos.jpg&f=1&nofb=1",
+		title: "WHEY BLACK",
 	},
 	{
 		id: 3,
-		img: "https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-		title: "LIGHT JACKETS",
+		img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fohway.com.br%2Ftemp%2Fsuplemento-4--86-1920x1080m1.jpg&f=1&nofb=1",
+		title: "WHEY VEGANO",
 	},
 ];
 
