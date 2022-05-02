@@ -4,8 +4,8 @@ import styled from "styled-components";
 const Container = styled.div`
 	border-bottom: 0.5px solid white;
 	height: 25px;
-	background-color: #46add6;
-	color: white;
+	background-color: #f1f1f1;
+	color: gray;
 	display: flex;
 	align-items: center;
 	justify-content: center;
