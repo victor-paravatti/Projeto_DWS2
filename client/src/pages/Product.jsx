@@ -5,12 +5,14 @@ import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
+import { mobile } from "../responsive";
 
 const Container = styled.div``;
 
 const Wrapper = styled.div`
 	padding: 50px;
 	display: flex;
+	${mobile({ padding: "10px", flexDirection: "column" })}
 `;
 
 const ImageContainer = styled.div`
@@ -21,11 +23,13 @@ const Image = styled.img`
 	width: 100%;
 	height: 90vh;
 	object-fit: cover;
+	${mobile({ height: "40vh" })}
 `;
 
 const InfoContainer = styled.div`
 	flex: 1;
 	padding: 0px 50px;
+	${mobile({ padding: "10px" })}
 `;
 
 const Title = styled.h1`
@@ -46,6 +50,7 @@ const FilterContainer = styled.div`
 	margin: 30px 0px;
 	display: flex;
 	justify-content: space-between;
+	${mobile({ width: "100%" })}
 `;
 
 const Filter = styled.div`
@@ -79,6 +84,7 @@ const AddContainer = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	${mobile({ width: "100%" })}
 `;
 
 const AmountContainer = styled.div`
@@ -117,7 +123,7 @@ const Product = () => {
 			<Announcement />
 			<Wrapper>
 				<ImageContainer>
-					<Image src="https://i.ibb.co/S6qMxwr/jean.jpg" />
+					<Image src="https://d2vq4s943o8cb4.cloudfront.net/Custom/Content/Products/24/56/24561074_whey-100-hd-900g-refil-black-skull_m1_637764735467463043.png" />
 				</ImageContainer>
 				<InfoContainer>
 					<Title>Durateston</Title>

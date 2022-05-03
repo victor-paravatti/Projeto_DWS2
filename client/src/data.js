@@ -43,34 +43,34 @@ export const categories = [
 export const popularProducts = [
 	{
 		id: 1,
-		img: "https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
+		img: "https://d2vq4s943o8cb4.cloudfront.net/Custom/Content/Products/24/56/24561187_whey-protein-concentrado-1-8kg-dux-nutrition_s1_637865930107620991.png",
 	},
 	{
 		id: 2,
-		img: "https://cdn.shopify.com/s/files/1/0101/4832/products/Angela_Natural_Tee.png?v=1606780388",
+		img: "https://d2vq4s943o8cb4.cloudfront.net/Custom/Content/Products/24/56/24561178_whey-protein-concentrado-900g-dux-nutrition_s1_637865917363842317.png",
 	},
 	{
 		id: 3,
-		img: "https://www.prada.com/content/dam/pradanux_products/U/UCS/UCS319/1YOTF010O/UCS319_1YOT_F010O_S_182_SLF.png",
+		img: "https://d2vq4s943o8cb4.cloudfront.net/Custom/Content/Products/24/56/24561166_fresh-whey-900g-dux-nutrition_s1_637865097556703862.png",
 	},
 	{
 		id: 4,
-		img: "https://www.burdastyle.com/pub/media/catalog/product/cache/7bd3727382ce0a860b68816435d76e26/107/BUS-PAT-BURTE-1320516/1170x1470_BS_2016_05_132_front.png",
+		img: "https://d2vq4s943o8cb4.cloudfront.net/Custom/Content/Products/24/56/24561124_cleanpro-whey-450g-nutrify_s2_637849565793916393.png",
 	},
 	{
 		id: 5,
-		img: "https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png",
+		img: "https://d2vq4s943o8cb4.cloudfront.net/Custom/Content/Products/24/56/24561074_whey-100-hd-900g-refil-black-skull_s1_637764735467463043.png",
 	},
 	{
 		id: 6,
-		img: "https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
+		img: "https://d2vq4s943o8cb4.cloudfront.net/Custom/Content/Products/24/56/24561006_100-prostar-whey-protein-900g-ultimate-nutrition_s1_637719163927621481.png",
 	},
 	{
 		id: 7,
-		img: "https://www.vintageindustries.nl/download_front/qympzk1762/2217_Arrow_Jacket_Forest.png",
+		img: "https://d2vq4s943o8cb4.cloudfront.net/Custom/Content/Products/24/56/24560979_adapto-whey-3w-adaptogen_s1_637716396475610753.png",
 	},
 	{
 		id: 8,
-		img: "https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
+		img: "https://d2vq4s943o8cb4.cloudfront.net/Custom/Content/Products/24/56/24560672_whey-protein-ultra-pure-isolate-muscletech-631653656_s1_637381913201870575.png",
 	},
 ];
