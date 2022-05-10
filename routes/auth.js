@@ -1,26 +1,25 @@
 const router = require("express").Router();
 const User = require("../models/User");
 const CryptoJS = require("crypto-js"); 
-const req = require("express/lib/request");
-const res = require("express/lib/response");
+const jwt = require("jsonwebtoken");
 
 //REGISTER
-router.post("/register", async (req, res) =>{
-  const newUser=new User({
+router.post("/register", async (req, res) => {
+  const newUser = new User({
     username: req.body.username,
     email: req.body.email,
     password: CryptoJS.AES.encrypt(
-      req.body.password.toString(),
+      req.body.password,
       process.env.PASS_SEC
     ).toString(),
   });
 
-  try{
-    const savedUser=await newUser.save();
+  try {
+    const savedUser = await newUser.save();
     res.status(201).json(savedUser);
-   }catch (err){
-       res.status(500).json(err);
-   }
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 //LOGIN
@@ -38,9 +37,17 @@ router.post("/login", async (req, res)=> {
         OriginalPassword !== req.body.password && 
             res.status(401).json("Nome de usuário ou senha incorreto!");
 
+            const acessToken = jwt.sign({
+                id:user._id,
+                isAdmin:user.isAdmin,
+              }, 
+              process.env.JWT_SEC,
+              {expiresIn:"3d"}
+            );
+
         const {password, ...others} = user._doc;
 
-        res.status(200).json(others);
+        res.status(200).json({...others, acessToken});
         }catch(err) {
             res.status(500).json(err);
         }
