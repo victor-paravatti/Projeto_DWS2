@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
 import Announcement from "../components/Announcement";
@@ -6,6 +6,7 @@ import Products from "../components/Products";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import { mobile } from "../responsive";
+import { useLocation } from "react-router-dom";
 
 const Container = styled.div``;
 
@@ -38,51 +39,59 @@ const Select = styled.select`
 const Option = styled.option``;
 
 const ProductList = () => {
+	const location = useLocation();
+	const cat = location.pathname.split("/")[2];
+	const [filters, setFilters] = useState({});
+	const [sort, setSort] = useState("newest");
+  
+	const handleFilters = (e) => {
+	  const value = e.target.value;
+	  setFilters({
+		...filters,
+		[e.target.name]: value,
+	  });
+	};
+  
 	return (
-		<Container>
-			<Navbar />
-			<Announcement />
-			<Title>Produtos</Title>
-			<FilterContainer>
-				<Filter>
-					<FilterText>Filtrar: </FilterText>
-					<Select>
-						<Option disabled selected>
-							Suplemento
-						</Option>
-						<Option>Creatina</Option>
-						<Option>Pré Treino</Option>
-						<Option>BCA</Option>
-						<Option>Whey</Option>
-						<Option>Deca</Option>
-						<Option>Durateston</Option>
-						<Option>Chá Verde</Option>
-					</Select>
-					<Select>
-						<Option disabled selected>
-							Tamanho
-						</Option>
-						<Option>XS</Option>
-						<Option>S</Option>
-						<Option>M</Option>
-						<Option>L</Option>
-						<Option>XL</Option>
-					</Select>
-				</Filter>
-				<Filter>
-					<FilterText>Ordenar: </FilterText>
-					<Select>
-						<Option selected>Recentes</Option>
-						<Option>Preço (menor)</Option>
-						<Option>Preço (maior)</Option>
-					</Select>
-				</Filter>
-			</FilterContainer>
-			<Products />
-			<Newsletter />
-			<Footer />
-		</Container>
+	  <Container>
+		<Navbar />
+		<Announcement />
+		<Title>{cat}</Title>
+		<FilterContainer>
+		  <Filter>
+			<FilterText>Filter Products:</FilterText>
+			<Select name="Categorias" onChange={handleFilters}>
+			  <Option disabled>Categorias</Option>
+			  <Option>creatiana</Option>
+			  <Option>bcaa</Option>
+			  <Option>suplemento</Option>
+			  <Option>blue</Option>
+			  <Option>yellow</Option>
+			  <Option>green</Option>
+			</Select>
+			<Select name="brand" onChange={handleFilters}>
+			  <Option disabled>Marca</Option>
+			  <Option>XS</Option>
+			  <Option>S</Option>
+			  <Option>M</Option>
+			  <Option>L</Option>
+			  <Option>XL</Option>
+			</Select>
+		  </Filter>
+		  <Filter>
+			<FilterText>Sort Products:</FilterText>
+			<Select onChange={(e) => setSort(e.target.value)}>
+			  <Option value="newest">Recentes</Option>
+			  <Option value="maior">Preço maior</Option>
+			  <Option value="menor">Preço menor</Option>
+			</Select>
+		  </Filter>
+		</FilterContainer>
+		<Products cat={cat} filters={filters} sort={sort} />
+		<Newsletter />
+		<Footer />
+	  </Container>
 	);
-};
+  };
 
 export default ProductList;
