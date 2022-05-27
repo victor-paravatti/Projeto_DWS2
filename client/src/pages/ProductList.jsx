@@ -60,22 +60,24 @@ const ProductList = () => {
 		<FilterContainer>
 		  <Filter>
 			<FilterText>Filter Products:</FilterText>
-			<Select name="Categorias" onChange={handleFilters}>
+			<Select name="type" onChange={handleFilters}>
 			  <Option disabled>Categorias</Option>
-			  <Option>creatiana</Option>
+			  <Option>creatina</Option>
 			  <Option>bcaa</Option>
 			  <Option>suplemento</Option>
-			  <Option>blue</Option>
-			  <Option>yellow</Option>
-			  <Option>green</Option>
+			  <Option>calça</Option>
+			  <Option>camiseta</Option>
+			  <Option>tenis</Option>
+			  <Option>halter</Option>
 			</Select>
 			<Select name="brand" onChange={handleFilters}>
 			  <Option disabled>Marca</Option>
-			  <Option>XS</Option>
-			  <Option>S</Option>
-			  <Option>M</Option>
-			  <Option>L</Option>
-			  <Option>XL</Option>
+			  <Option>integral</Option>
+			  <Option>darkness</Option>
+			  <Option>max titanium</Option>
+			  <Option>veneno</Option>
+			  <Option>adidas</Option>
+			  <Option>nike</Option>
 			</Select>
 		  </Filter>
 		  <Filter>

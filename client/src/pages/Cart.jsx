@@ -5,6 +5,7 @@ import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
+import { useSelector } from "react-redux";
 
 const Container = styled.div``;
 
@@ -151,6 +152,7 @@ const Button = styled.button`
 `;
 
 function Cart() {
+	const cart = useSelector((state) => state.cart);
 	return (
 		<Container>
 			<Navbar />
@@ -167,65 +169,36 @@ function Cart() {
 				</Top>
 				<Bottom>
 					<Info>
-						<Product>
-							<ProductDetail>
-								<Image src="https://d2vq4s943o8cb4.cloudfront.net/Custom/Content/Products/01/64/0164_deca-mass-igf1-integralmedica-2151_m5_636347652870786000.png" />
-								<Details>
-									<ProductName>
-										<b>Produto:</b> DECA MASS
-									</ProductName>
-									<ProductId>
-										<b>ID:</b> 123456987
-									</ProductId>
-									<ProductColor color="black" />
-									<ProductSize>
-										<b>Quantidade:</b> 1500g
-									</ProductSize>
-								</Details>
-							</ProductDetail>
-							<PriceDetail>
-								<ProductAmountContainer>
-									<Add />
-									<ProductAmount>3</ProductAmount>
-									<Remove />
-								</ProductAmountContainer>
-								<ProductPrice>R$ 80,00</ProductPrice>
-							</PriceDetail>
-						</Product>
-
-						<Hr />
-
-						<Product>
-							<ProductDetail>
-								<Image src="https://d2vq4s943o8cb4.cloudfront.net/Custom/Content/Products/24/56/24561178_whey-protein-concentrado-900g-dux-nutrition_m1_637865917363842317.png" />
-								<Details>
-									<ProductName>
-										<b>Produto:</b> WHEY PROTEIN CONCENTRADO
-									</ProductName>
-									<ProductId>
-										<b>ID:</b> 987564123
-									</ProductId>
-									<ProductColor color="red" />
-									<ProductSize>
-										<b>Quantidade:</b> 900g
-									</ProductSize>
-								</Details>
-							</ProductDetail>
-							<PriceDetail>
-								<ProductAmountContainer>
-									<Add />
-									<ProductAmount>1</ProductAmount>
-									<Remove />
-								</ProductAmountContainer>
-								<ProductPrice>R$ 200,00</ProductPrice>
-							</PriceDetail>
-						</Product>
+					{cart.products.map((product) => (	
+							<Product>
+								<ProductDetail>
+									<Image src={product.img} />
+									<Details>
+										<ProductName>
+											<b>Produto: {product.tittle}</b> 
+										</ProductName>
+										<ProductId>
+											<b>ID: {product._id}</b> 	
+										</ProductId>
+									</Details>
+								</ProductDetail>
+								<PriceDetail>
+									<ProductAmountContainer>	
+										<Add />
+										<ProductAmount>{product.quantity}</ProductAmount>
+										<Remove />
+									</ProductAmountContainer>
+									<ProductPrice>R$  {product.price * product.quantity}</ProductPrice>
+								</PriceDetail>
+							</Product>
+							))}
+						<Hr />				
 					</Info>
 					<Summary>
 						<SummaryTitle>RESUMO PEDIDO</SummaryTitle>
 						<SummaryItem>
 							<SummaryItemText>Subtotal</SummaryItemText>
-							<SummaryItemPrice>R$ 280,00</SummaryItemPrice>
+							<SummaryItemPrice>R$ {cart.total}</SummaryItemPrice>
 						</SummaryItem>
 						<SummaryItem>
 							<SummaryItemText>Taxa de Entrega</SummaryItemText>
@@ -237,7 +210,7 @@ function Cart() {
 						</SummaryItem>
 						<SummaryItem type="total">
 							<SummaryItemText>Total</SummaryItemText>
-							<SummaryItemPrice>R$ 280,00</SummaryItemPrice>
+							<SummaryItemPrice>R$ {cart.total}</SummaryItemPrice>
 						</SummaryItem>
 						<Button>CONFIRMAR COMPRA</Button>
 					</Summary>

@@ -18,7 +18,7 @@ mongosse.connect(
     process.env.MONGO_URL
     ).then(()=>console.log("DBconnect sucessfull"))
     .catch((err)=>{
-    console.log("err")
+    console.log(err)
     })
 
 app.use(cors());

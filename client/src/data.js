@@ -26,20 +26,20 @@ export const categories = [
 	{
 		id: 1,
 		img: "https://http2.mlstatic.com/D_NQ_NP_2X_929260-MLA48061947189_102021-V.webp",
-		title: "Suplementos",
-		cat: "suplemento"
+		title: "Consumiveis",
+		cat: "consumiveis"
 	},
 	{
 		id: 2,
-		img: "https://lojamaxtitanium.vtexassets.com/arquivos/ids/155454-800-800?v=637820213733300000&width=800&height=800&aspect=true",
-		title: "Creatinas",
-		cat: "creatina"
+		img: "https://sportbuzz.uol.com.br/media/_versions/capa_JcyUAwn_widelg.png",
+		title: "Roupas",
+		cat: "roupas"
 	},
 	{
 		id: 3,
-		img: "https://www.drogariaminasbrasil.com.br/media/product/8a4/suplemento-energetico-mass-titanium-17500-max-titanium-sabor-coco-3kg-699.jpg",
-		title: "BCAA",
-		cat: "bcaa"
+		img: "https://corpoacorpo.com.br/upload/imagens_upload/treino_funcional_acessorios.jpg",
+		title: "Acessorios",
+		cat: "acessorios"
 	},
 ];
 

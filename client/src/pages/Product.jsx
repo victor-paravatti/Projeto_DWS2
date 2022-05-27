@@ -1,11 +1,17 @@
 import { Add, Remove } from "@material-ui/icons";
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Newsletter from "../components/Newsletter";
 import { mobile } from "../responsive";
+import { useLocation } from "react-router-dom";
+import { publicRequest } from "../requestMethods";
+import { useState } from "react";
+import { addProduct } from "../redux/cartRedux";
+import { useDispatch } from "react-redux";
+
 
 const Container = styled.div``;
 
@@ -117,45 +123,55 @@ const Button = styled.button`
 `;
 
 const Product = () => {
+	const location = useLocation();
+	const id = location.pathname.split("/")[2];
+	const [product, setProduct] = useState({});
+	const [quantity, setQuantity] = useState(1);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		const getProduct = async () => {
+		  try {
+			const res = await publicRequest.get("/products/find/" + id);
+			setProduct(res.data);
+		  } catch {}
+		};
+		getProduct();
+	  }, [id]);
+
+	const handleQuantity = (type) =>{
+		if(type ===  "dec" && quantity>1){
+			setQuantity(quantity-1);
+		} if(type === "inc"){
+			setQuantity(quantity+1);
+		}
+	}
+
+	const handleClick = ()=>{
+		dispatch(addProduct({...product,quantity}));		
+	}
+
 	return (
 		<Container>
 			<Navbar />
 			<Announcement />
 			<Wrapper>
 				<ImageContainer>
-					<Image src="https://d2vq4s943o8cb4.cloudfront.net/Custom/Content/Products/24/56/24561074_whey-100-hd-900g-refil-black-skull_m1_637764735467463043.png" />
+					<Image src={product.img} />
 				</ImageContainer>
 				<InfoContainer>
-					<Title>Durateston</Title>
-					<Description>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi obcaecati
-						eaque dignissimos pariatur aperiam voluptatum at culpa magnam optio ex.
-					</Description>
-					<Price> R$ 99,99</Price>
+					<Title>{product.tittle}</Title>
+					<Description>{product.desc}</Description>
+					<Price> R$ {product.price}</Price>
 					<FilterContainer>
-						<Filter>
-							<FilterTitle>Suplemento</FilterTitle>
-							<FilterColor color="black" />
-							<FilterColor color="darkblue" />
-							<FilterColor color="gray" />
-						</Filter>
-						<Filter>
-							<FilterTitle>Quantidade</FilterTitle>
-							<FilterSize>
-								<FilterSizeOption>mg</FilterSizeOption>
-								<FilterSizeOption>g</FilterSizeOption>
-								<FilterSizeOption>Kg</FilterSizeOption>
-								<FilterSizeOption>L</FilterSizeOption>
-							</FilterSize>
-						</Filter>
 					</FilterContainer>
 					<AddContainer>
 						<AmountContainer>
-							<Remove />
-							<Amount>1</Amount>
-							<Add />
+						<Remove onClick={() => handleQuantity("dec")} />
+						<Amount>{quantity}</Amount>
+						<Add onClick={() => handleQuantity("inc")} />
 						</AmountContainer>
-						<Button>Adicionar ao Carrinho</Button>
+						<Button onClick={() => handleClick()}>Adicionar ao Carrinho</Button>
 					</AddContainer>
 				</InfoContainer>
 			</Wrapper>
