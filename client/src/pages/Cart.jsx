@@ -1,11 +1,17 @@
-import { Add, Remove } from "@material-ui/icons";
-import React from "react";
+import { Add, NavigateBeforeOutlined, Remove } from "@material-ui/icons";
+import React, { useEffect, useReducer, useState } from "react";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
 import { useSelector } from "react-redux";
+import StripeCheckout from "react-stripe-checkout";
+import {userRequest} from "../requestMethods";
+import { useNavigate } from 'react-router-dom';
+
+
+const KEY = "pk_test_51L71WzKV5ghIcaS2zl8NoxbH9ZqyLefK9jNEztoIIpdaU8qPHAgCxkj9LJwijS4cJfVnzgmmPFIRxforG1ouJAnL009DkSAH6x"; 
 
 const Container = styled.div``;
 
@@ -153,6 +159,31 @@ const Button = styled.button`
 
 function Cart() {
 	const cart = useSelector((state) => state.cart);
+	const [stripeToken,setStripeToken] = useState(null);
+	const [stripeData,setStripeData] = useState(null);
+	const navigate = useNavigate()
+	const onToken = (token)=>{
+		setStripeToken(token);
+	}
+	
+	useEffect(() => {
+		const makeRequest = async () => {
+			try {		  
+			const res = await userRequest.post("/checkout/payment", {
+			  tokenId: stripeToken.id,
+			  amount: 500,		  
+			});
+			
+			navigate("/success", {
+			  state: {cart},
+			});		  	
+		  } catch(err) {
+			  console.log(err)
+		  }
+		};
+		
+		stripeToken && cart.total >= 1 && makeRequest();
+	  }, [stripeToken, cart.total, navigate]);
 	return (
 		<Container>
 			<Navbar />
@@ -212,7 +243,18 @@ function Cart() {
 							<SummaryItemText>Total</SummaryItemText>
 							<SummaryItemPrice>R$ {cart.total}</SummaryItemPrice>
 						</SummaryItem>
-						<Button>CONFIRMAR COMPRA</Button>
+						<StripeCheckout
+							name="Double Biceps"
+							image="https://image.shutterstock.com/image-vector/double-bicep-vector-illustration-260nw-1366030016.jpg"
+							billingAddress
+							shippingAddress
+							description={`O total é igual: $${cart.total}`}
+							amount={cart.total * 100}
+							token={onToken}
+							stripeKey={KEY}
+							>
+							<Button>CHECKOUT NOW</Button>
+           				 </StripeCheckout>
 					</Summary>
 				</Bottom>
 			</Wrapper>
@@ -221,4 +263,4 @@ function Cart() {
 	);
 }
 
-export default Cart;
+export default Cart; 
