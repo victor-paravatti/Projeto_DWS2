@@ -1,54 +1,51 @@
 import "./newUser.css";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addUser } from "../../redux/apiCalls";
+import { useHistory} from 'react-router-dom';
 
 export default function NewUser() {
+  const [inputs,setInputs] = useState({});
+  const dispatch = useDispatch();
+  const navigate = useHistory();
+  const handleChange = (e) => {
+    setInputs((prev) => {
+      return { ...prev, [e.target.name]: e.target.value };
+    });
+  };
+  const handleClick =(e)=>{
+    e.preventDefault();
+    addUser(inputs, dispatch);
+    alert("Usuario criado com sucesso!");
+    navigate.push("/");
+    }
   return (
     <div className="newUser">
-      <h1 className="newUserTitle">New User</h1>
+      <h1 className="newUserTitle">Novo usuario</h1>
       <form className="newUserForm">
         <div className="newUserItem">
-          <label>Username</label>
-          <input type="text" placeholder="john" />
+          <label>username</label>
+          <input name="username"
+                 type="text" 
+                 placeholder="666FernaninDarkShadow6969"
+                 onChange={handleChange} />
         </div>
         <div className="newUserItem">
-          <label>Full Name</label>
-          <input type="text" placeholder="John Smith" />
-        </div>
-        <div className="newUserItem">
-          <label>Email</label>
-          <input type="email" placeholder="john@gmail.com" />
+          <label>E-mail</label>
+          <input name="email"
+                 type="email" 
+                 placeholder="6969fernandinDarkShadow@gmail.com"
+                 onChange={handleChange} />
         </div>
         <div className="newUserItem">
           <label>Password</label>
-          <input type="password" placeholder="password" />
-        </div>
-        <div className="newUserItem">
-          <label>Phone</label>
-          <input type="text" placeholder="+1 123 456 78" />
-        </div>
-        <div className="newUserItem">
-          <label>Address</label>
-          <input type="text" placeholder="New York | USA" />
-        </div>
-        <div className="newUserItem">
-          <label>Gender</label>
-          <div className="newUserGender">
-            <input type="radio" name="gender" id="male" value="male" />
-            <label for="male">Male</label>
-            <input type="radio" name="gender" id="female" value="female" />
-            <label for="female">Female</label>
-            <input type="radio" name="gender" id="other" value="other" />
-            <label for="other">Other</label>
-          </div>
-        </div>
-        <div className="newUserItem">
-          <label>Active</label>
-          <select className="newUserSelect" name="active" id="active">
-            <option value="yes">Yes</option>
-            <option value="no">No</option>
-          </select>
-        </div>
-        <button className="newUserButton">Create</button>
+          <input name="password"
+                 type="password" 
+                 placeholder="password"
+                 onChange={handleChange}/>
+        </div>      
       </form>
+      <button onClick={handleClick} className="newUserButton">Criar</button>
     </div>
   );
 }

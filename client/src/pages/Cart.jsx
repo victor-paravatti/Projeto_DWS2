@@ -1,15 +1,16 @@
-import { Add, NavigateBeforeOutlined, Remove } from "@material-ui/icons";
-import React, { useEffect, useReducer, useState } from "react";
+
+import {Add, DeleteOutlineRounded, Remove} from "@material-ui/icons";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import { mobile } from "../responsive";
-import { useSelector } from "react-redux";
+import {mobile} from "../responsive";
+import {useDispatch, useSelector} from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
 import {userRequest} from "../requestMethods";
-import { useNavigate } from 'react-router-dom';
-
+import {useNavigate,Link} from 'react-router-dom';
+import {changeProductQuantity, cleanCart, removeProduct} from "../redux/cartRedux";
 
 const KEY = "pk_test_51L71WzKV5ghIcaS2zl8NoxbH9ZqyLefK9jNEztoIIpdaU8qPHAgCxkj9LJwijS4cJfVnzgmmPFIRxforG1ouJAnL009DkSAH6x"; 
 
@@ -160,22 +161,24 @@ const Button = styled.button`
 function Cart() {
 	const cart = useSelector((state) => state.cart);
 	const [stripeToken,setStripeToken] = useState(null);
-	const [stripeData,setStripeData] = useState(null);
 	const navigate = useNavigate()
 	const onToken = (token)=>{
 		setStripeToken(token);
 	}
-	
+	const dispatch = useDispatch();
 	useEffect(() => {
 		const makeRequest = async () => {
 			try {		  
 			const res = await userRequest.post("/checkout/payment", {
 			  tokenId: stripeToken.id,
-			  amount: 500,		  
+			  amount: cart.total * 100,		  
 			});
-			
 			navigate("/success", {
-			  state: {cart},
+			  state: {
+					cart: cart, 
+					stripeData: res.data
+				},
+			  
 			});		  	
 		  } catch(err) {
 			  console.log(err)
@@ -184,6 +187,18 @@ function Cart() {
 		
 		stripeToken && cart.total >= 1 && makeRequest();
 	  }, [stripeToken, cart.total, navigate]);
+	  
+	const handleRemove = (product) => {
+        dispatch(removeProduct({...product}));
+    }
+
+    const handleClean = () => {
+        dispatch(cleanCart())
+    }
+
+    const handleQuantity = (product, tipo) => {
+        dispatch(changeProductQuantity({...product, tipo}))
+    }
 	return (
 		<Container>
 			<Navbar />
@@ -191,12 +206,9 @@ function Cart() {
 			<Wrapper>
 				<Title>SEU CARRINHO</Title>
 				<Top>
-					<TopButton>CONTINUAR COMPRANDO</TopButton>
-					<TopTexts>
-						<TopText>Carrinho de compra (2)</TopText>
-						<TopText>Lista de Desejos (0)</TopText>
-					</TopTexts>
-					<TopButton type="filled">CONFIRMAR COMPRA</TopButton>
+					<Link to="/products">
+						<TopButton>CONTINUAR COMPRANDO</TopButton>
+					</Link>
 				</Top>
 				<Bottom>
 					<Info>
@@ -209,16 +221,22 @@ function Cart() {
 											<b>Produto: {product.tittle}</b> 
 										</ProductName>
 										<ProductId>
+											<b>Descrição: {product.desc}</b> 	
+										</ProductId>
+										<ProductId>
 											<b>ID: {product._id}</b> 	
 										</ProductId>
 									</Details>
 								</ProductDetail>
 								<PriceDetail>
-									<ProductAmountContainer>	
-										<Add />
-										<ProductAmount>{product.quantity}</ProductAmount>
-										<Remove />
-									</ProductAmountContainer>
+								<ProductAmountContainer>
+									<Remove onClick={() => handleQuantity(product, "dec")}/>
+									<ProductAmount>{product.quantity}</ProductAmount>
+									<Add onClick={() => handleQuantity(product, "inc")}/>							
+								</ProductAmountContainer>
+								<button onClick={() => handleRemove(product,product.quantity)}>
+									<DeleteOutlineRounded></DeleteOutlineRounded>
+								</button>	
 									<ProductPrice>R$  {product.price * product.quantity}</ProductPrice>
 								</PriceDetail>
 							</Product>
@@ -253,10 +271,11 @@ function Cart() {
 							token={onToken}
 							stripeKey={KEY}
 							>
-							<Button>CHECKOUT NOW</Button>
+							<Button>Comprar</Button>
            				 </StripeCheckout>
 					</Summary>
 				</Bottom>
+				<Button onClick={() => handleClean()}>LIMPAR CARRINHO</Button>
 			</Wrapper>
 			<Footer />
 		</Container>

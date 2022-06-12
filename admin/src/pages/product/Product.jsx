@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./product.css";
 import { Publish } from "@material-ui/icons";
 import {useLocation} from "react-router-dom"
@@ -17,13 +17,13 @@ import { useState } from "react";
 export default function Product() {
     const location = useLocation();
     const productId = location.pathname.split("/")[2];
-
+    const navigate = useHistory();
     const product = useSelector((state) => 
     state.product.products.find((product) => product._id === productId));
     const [inputs,setInputs] = useState({})
     const [file,setFile] = useState({})
     const dispatch = useDispatch();
-    console.log(file,"abc");  
+    
     const handleChange = (e) => {
       setInputs((prev) => {
         return { ...prev, [e.target.name]: e.target.value };
@@ -67,12 +67,15 @@ export default function Product() {
           // For instance, get the download URL: https://firebasestorage.googleapis.com/...
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             const product = { ...inputs, img: downloadURL };
-            updateProduct(productId, dispatch);
+            updateProduct(productId, product, dispatch);
+            console.log("Produto atualizado com sucesso!");
+            alert("Produto atualizado com sucesso!");
+            navigate.push("/");
           });
         }
       );
     };
-    console.log(inputs)
+    console.log(productId)
     return (
     <div className="product">
       <div className="productTitleContainer">
