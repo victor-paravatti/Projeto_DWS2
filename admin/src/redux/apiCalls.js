@@ -30,7 +30,14 @@ import {
     updateProductStart,
     updateProductSuccess,
 } from "./productRedux";
-
+import {
+    getOrderStart,
+    getOrderSuccess,
+    getOrderFailure,
+    updateOrderStart,
+    updateOrderSuccess,
+    updateOrderFailure,
+}from "./orderRedux"
 export const login = async (dispatch, user) => {
     dispatch(loginStart());
     try {
@@ -119,5 +126,25 @@ export const addUser = async (user, dispatch) => {
         dispatch(addUserSuccess(res.data));
     } catch (err) {
         dispatch(addUserFailure());
+    }
+};
+//UPDATE ORDERS
+export const updateOrder = async (id, order, dispatch) => {
+    dispatch(updateOrderStart());
+    try {
+        const res = await userRequest.put(`/orders/${id}`, order)
+        dispatch(updateOrderSuccess(res.data));
+    } catch (err) {
+        dispatch(updateOrderFailure());
+    }
+};
+//GET Orders
+export const getOrders = async (dispatch) => {
+    dispatch(getOrderStart());
+    try {
+        const res = await userRequest.get("/orders");
+        dispatch(getOrderSuccess(res.data));
+    } catch (err) {
+        dispatch(getOrderFailure());
     }
 };

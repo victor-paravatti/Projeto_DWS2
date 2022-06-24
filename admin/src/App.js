@@ -10,7 +10,7 @@ import ProductList from "./pages/productList/ProductList";
 import Product from "./pages/product/Product";
 import NewProduct from "./pages/newProduct/NewProduct";
 import Login from "./pages/login/Login";
-
+import Order from  "./pages/order/order";
 function App() {
     const admin = JSON.parse(JSON.parse(localStorage.getItem("persist:root"))?.user || "{}")?.currentUser?.isAdmin;
 
@@ -46,6 +46,9 @@ function App() {
                         </Route>
                         <Route path="/newproduct">
                             <NewProduct/>
+                        </Route>
+                        <Route path="/order">
+                            <Order/>
                         </Route>
                     </div>
                 }

@@ -17,7 +17,7 @@ export const productSlice = createSlice({
             state.isFetching = false;
             state.products = action.payload;
         },
-        getProductFailure: (state) => {
+        getProductFailure: (state) => { 
             state.isFetching = false;
             state.error = true;
         },

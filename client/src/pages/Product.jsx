@@ -11,6 +11,7 @@ import {publicRequest} from "../requestMethods";
 import {addProduct} from "../redux/cartRedux";
 import {useDispatch, useSelector} from "react-redux";
 import {addWhislistProduct} from "../redux/whislistRedux";
+import {addWhislistProductBD} from "../redux/apiCalls";
 
 
 const Container = styled.div``;
@@ -90,7 +91,6 @@ const Button = styled.button`
   background-color: white;
   cursor: pointer;
   font-weight: 500;
-
   &:hover {
     background-color: #f1f1f1;
   }
@@ -130,7 +130,7 @@ const Product = () => {
     }
 
     const handleWhislistClick = () => {
-        if (user) dispatch(addWhislistProduct({...product}));
+        if (user) addWhislistProductBD(product, dispatch, user.username);
         else navigate("/login");
     }
 

@@ -6,6 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {publicRequest} from "../requestMethods";
 import {addProduct} from "../redux/cartRedux";
 import {addWhislistProduct} from "../redux/whislistRedux";
+import {addWhislistProductBD} from "../redux/apiCalls";
 
 const Info = styled.div`
   opacity: 0;
@@ -33,7 +34,6 @@ const Container = styled.div`
   justify-content: center;
   background-color: #f7f7f7;
   position: relative;
-
   &:hover ${Info} {
     opacity: 1;
   }
@@ -61,7 +61,6 @@ const Icon = styled.div`
   justify-content: center;
   margin: 10px;
   transition: all 0.5s ease;
-
   &:hover {
     background-color: #e9f5f5;
     transform: scale(1.1);
@@ -93,7 +92,7 @@ const Product = ({item}) => {
     }
 
     const handleWhislistClick = () => {
-        if(user) dispatch(addWhislistProduct({...product}));
+        if (user) addWhislistProductBD(product, dispatch, user.username);
         else navigate("/login");
     }
 

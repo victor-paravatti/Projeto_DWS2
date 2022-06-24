@@ -23,23 +23,27 @@ export default function Sidebar() {
           <h3 className="sidebarTitle">Dashboard</h3>
           <ul className="sidebarList">
             <Link to="/" className="link">
-            <li className="sidebarListItem active">
+            <li className="sidebarListItem">
               <LineStyle className="sidebarIcon" />
               Home
             </li>
             </Link>
+            <Link to="/" className="link">
             <li className="sidebarListItem">
               <Timeline className="sidebarIcon" />
               Analises
             </li>
+            </Link>
+            <Link to="/" className="link">
             <li className="sidebarListItem">
               <TrendingUp className="sidebarIcon" />
               Vendas
             </li>
+            </Link>
           </ul>
         </div>
         <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Quick Menu</h3>
+          <h3 className="sidebarTitle">Menu usuarios</h3>
           <ul className="sidebarList">
             <Link to="/users" className="link">
               <li className="sidebarListItem">
@@ -47,54 +51,40 @@ export default function Sidebar() {
                 Usuarios
               </li>
             </Link>
-            <Link to="/products" className="link">
+            <Link to="/newuser" className="link">
               <li className="sidebarListItem">
                 <Storefront className="sidebarIcon" />
-                Produtos
+                Criar usuarios
               </li>
             </Link>
+          </ul>
+        </div>
+        <div className="sidebarMenu">
+          <h3 className="sidebarTitle">Menu produtos</h3>
+          <ul className="sidebarList">
+          <Link to="/products" className="link">
+            <li className="sidebarListItem">
+              <Storefront className="sidebarIcon" />
+             Produtos
+            </li>
+          </Link>
+          <Link to="/newproduct" className="link">
             <li className="sidebarListItem">
               <AttachMoney className="sidebarIcon" />
-              Transações
+              Criar produto
             </li>
+          </Link>  
+          </ul>
+        </div>
+        <div className="sidebarMenu">
+          <h3 className="sidebarTitle">Menu ordens</h3>
+          <ul className="sidebarList">           
+          <Link to="/order" className="link">
             <li className="sidebarListItem">
               <BarChart className="sidebarIcon" />
-              Reports
+              Lista de ordens
             </li>
-          </ul>
-        </div>
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Notifications</h3>
-          <ul className="sidebarList">
-            <li className="sidebarListItem">
-              <MailOutline className="sidebarIcon" />
-              E-Mail
-            </li>
-            <li className="sidebarListItem">
-              <DynamicFeed className="sidebarIcon" />
-              Feedback
-            </li>
-            <li className="sidebarListItem">
-              <ChatBubbleOutline className="sidebarIcon" />
-              Messangens
-            </li>
-          </ul>
-        </div>
-        <div className="sidebarMenu">
-          <h3 className="sidebarTitle">Staff</h3>
-          <ul className="sidebarList">
-            <li className="sidebarListItem">
-              <WorkOutline className="sidebarIcon" />
-              Manage
-            </li>
-            <li className="sidebarListItem">
-              <Timeline className="sidebarIcon" />
-              Analises
-            </li>
-            <li className="sidebarListItem">
-              <Report className="sidebarIcon" />
-              Reports
-            </li>
+          </Link>
           </ul>
         </div>
       </div>
