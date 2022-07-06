@@ -33,12 +33,12 @@ O Dublebiceps é uma aplicação que visa facilitar o encontro entre vendedores 
 -   Executar `npm install` para instalar dependências do projeto;
 -   Executar `npm start` para que o projeto seja executado;
 
-### 💻 Front-end
+### 💻 Client Front-end
 
 -   Entrar na pasta `client`;
 -   Executar `npm install` para instalar dependências do projeto;
 -   Executar `npm start` para que o projeto seja executado;
-### 💻 Client front-end
+### 💻 Admin front-end
 
 -   Entrar na pasta `admin`;
 -   Executar `npm install` para instalar dependências do projeto;
